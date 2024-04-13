@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ftprintf.h"
 
 static int	check_datatype(char datatype, va_list args)
 {
