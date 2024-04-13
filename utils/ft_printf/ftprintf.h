@@ -5,7 +5,6 @@
 # include <stdarg.h>
 # include <stdint.h>
 
-int	ft_printf(const char *str, ...);
 int	print_char(char c);
 int	print_string(char *s);
 int	print_pointer(uintptr_t p);
