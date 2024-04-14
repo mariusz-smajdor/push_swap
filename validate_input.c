@@ -1,11 +1,13 @@
 #include "pushswap.h"
 
-int	validate_input(char **av)
+int	validate_input(char **av, int is_split)
 {
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = !is_split;
+	if (av[0] == NULL)
+		return (ft_printf("Error\n") - 6);
 	while (av[i])
 	{
 		j = 0;

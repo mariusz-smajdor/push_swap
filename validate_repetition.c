@@ -1,11 +1,11 @@
 #include "pushswap.h"
 
-int	validate_repetition(char **a)
+int	validate_repetition(char **a, int is_split)
 {
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = !is_split;
 	while (a[i])
 	{
 		j = i + 1;

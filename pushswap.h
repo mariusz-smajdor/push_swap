@@ -17,6 +17,7 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 
-int		validate_input(char **av);
+int		validate_input(char **av, int is_split);
+int		validate_repetition(char **a, int is_split);
 
 #endif
