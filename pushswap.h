@@ -29,6 +29,9 @@ void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 void	validate_input(char **av, bool is_split);
 t_list	*init_stack(char **av, bool is_split);
