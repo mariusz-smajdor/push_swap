@@ -22,6 +22,8 @@ void	ft_error(void);
 t_list	*ft_lstnew(int n);
 void	ft_lstadd_back(t_list **stack, t_list *new);
 
+void	sa(t_list **stack_a);
+
 void	validate_input(char **av, bool is_split);
 t_list	*init_stack(char **av, bool is_split);
 
