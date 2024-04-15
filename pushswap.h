@@ -25,6 +25,8 @@ void	ft_lstadd_back(t_list **stack, t_list *new);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
 
 void	validate_input(char **av, bool is_split);
 t_list	*init_stack(char **av, bool is_split);
