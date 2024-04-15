@@ -6,7 +6,7 @@ int main(int ac, char **av)
     t_list	*stack_b;
 
     if (ac < 2)
-        return (ft_printf("Error\n") - 5);
+        ft_error();
     if (ac == 2)
         av = ft_split(av[1], ' ');
     stack_a = malloc(sizeof(t_list));
@@ -17,10 +17,6 @@ int main(int ac, char **av)
         free(stack_b);
         return (1);
     }
-    if (!validate_input(av, ac == 2))
-        return (1);
-    if (!validate_repetition(av, ac == 2))
-        return (1);
+    validate_input(av, ac == 2);
     return (0);
 }
-

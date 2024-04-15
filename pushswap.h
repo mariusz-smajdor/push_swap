@@ -2,6 +2,7 @@
 # define PUSHSWAP_H
 
 # include <stdlib.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -16,8 +17,9 @@ int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_error(void);
 
-int		validate_input(char **av, int is_split);
-int		validate_repetition(char **a, int is_split);
+void	validate_input(char **av, bool is_split);
 
 #endif
