@@ -2,21 +2,15 @@
 
 int main(int ac, char **av)
 {
-    t_list	*stack_a;
-    t_list	*stack_b;
+	t_list	*stack_a;
+	bool	is_split;
 
-    if (ac < 2)
-        ft_error();
-    if (ac == 2)
-        av = ft_split(av[1], ' ');
-    stack_a = malloc(sizeof(t_list));
-    stack_b = malloc(sizeof(t_list));
-    if (!stack_a || !stack_b)
-    {
-        free(stack_a);
-        free(stack_b);
-        return (1);
-    }
-    validate_input(av, ac == 2);
-    return (0);
+	is_split = ac == 2;
+	if (ac < 2)
+		ft_error();
+	if (is_split)
+		av = ft_split(av[1], ' ');
+	validate_input(av, is_split);
+	stack_a = init_stack(av, is_split);
+	return (0);
 }
