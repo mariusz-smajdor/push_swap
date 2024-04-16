@@ -21,6 +21,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_error(void);
 t_list	*ft_lstnew(int n);
 void	ft_lstadd_back(t_list **stack, t_list *new);
+size_t	ft_lstsize(t_list *stack);
 
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
@@ -35,5 +36,6 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 
 void	validate_input(char **av, bool is_split);
 t_list	*init_stack(char **av, bool is_split);
+void	sort_stack(t_list **stack_a, t_list **stack_b);
 
 #endif
