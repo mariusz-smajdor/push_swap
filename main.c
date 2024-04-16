@@ -3,6 +3,7 @@
 int main(int ac, char **av)
 {
 	t_list	*stack_a;
+	t_list	*stack_b;
 	bool	is_split;
 
 	is_split = ac == 2;
@@ -12,5 +13,7 @@ int main(int ac, char **av)
 		av = ft_split(av[1], ' ');
 	validate_input(av, is_split);
 	stack_a = init_stack(av, is_split);
+	stack_b = NULL;
+	sort_stack(&stack_a, &stack_b);
 	return (0);
 }
