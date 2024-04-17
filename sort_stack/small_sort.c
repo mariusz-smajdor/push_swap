@@ -2,7 +2,7 @@
 
 static size_t	find_min_pos(t_list *stack)
 {
-	size_t	min;
+	int		min;
 	size_t	pos;
 	size_t	i;
 
@@ -44,30 +44,26 @@ static void	sort_three(t_list **stack_a)
 		sa(stack_a);
 }
 
-static void	sort_four(t_list **stack_a, t_list **stack_b, size_t min_pos)
+static void sort(t_list **stack_a, t_list **stack_b, size_t min_pos, size_t len)
 {
-	if (min_pos < 2)
+	if (min_pos < len / 2)
 		while (min_pos--)
 			ra(stack_a);
 	else
-		while (min_pos++ < 4)
+		while (min_pos++ < len)
 			rra(stack_a);
-	pb(stack_a, stack_b);
-	sort_three(stack_a);
-	pa(stack_a, stack_b);
-}
-
-static void	sort_five(t_list **stack_a, t_list **stack_b, size_t min_pos)
-{
-	if (min_pos < 3)
-		while (min_pos--)
-			ra(stack_a);
-	else
-		while (min_pos++ < 5)
-			rra(stack_a);
-	pb(stack_a, stack_b);
-	sort_four(stack_a, stack_b, find_min_pos(*stack_a));
-	pa(stack_a, stack_b);
+	if (!is_sorted(*stack_a))
+	{
+			if (len > 3)
+		{
+			pb(stack_a, stack_b);
+			sort(stack_a, stack_b, find_min_pos(*stack_a), len - 1);
+		}
+		else
+			sort_three(stack_a);
+		while (*stack_b)
+			pa(stack_a, stack_b);
+	}
 }
 
 void	small_sort(t_list **stack_a, t_list **stack_b, size_t size)
@@ -77,10 +73,6 @@ void	small_sort(t_list **stack_a, t_list **stack_b, size_t size)
 	min_pos = find_min_pos(*stack_a);
 	if (size == 2 && (*stack_a)->number > (*stack_a)->next->number)
 		sa(stack_a);
-	if (size == 3)
-		sort_three(stack_a);
-	if (size == 4)
-		sort_four(stack_a, stack_b, min_pos);
-	if (size == 5)
-		sort_five(stack_a, stack_b, min_pos);
+	else
+		sort(stack_a, stack_b, min_pos, size);
 }
