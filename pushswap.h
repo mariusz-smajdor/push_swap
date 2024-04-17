@@ -37,5 +37,6 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	validate_input(char **av, bool is_split);
 t_list	*init_stack(char **av, bool is_split);
 void	sort_stack(t_list **stack_a, t_list **stack_b);
+void	small_sort(t_list **stack_a, t_list **stack_b, size_t size);
 
 #endif
