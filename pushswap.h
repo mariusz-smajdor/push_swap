@@ -7,6 +7,8 @@
 typedef struct s_list
 {
 	int				number;
+	int				prev;
+	unsigned int	price;
 	struct s_list	*next;
 }					t_list;
 

@@ -10,7 +10,12 @@ void	ft_lstadd_back(t_list **stack, t_list *new)
 		return ;
 	}
 	last = *stack;
+	last->prev = new->number;
 	while (last->next)
+	{
+		last->next->prev = last->number;
 		last = last->next;
+	}
+	new->prev = last->number;
 	last->next = new;
 }
