@@ -1,4 +1,16 @@
-#include "ftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 22:12:55 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/18 22:19:58 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
 
 static int	check_datatype(char datatype, va_list args)
 {
@@ -39,10 +51,10 @@ int	ft_printf(const char *str, ...)
 			str_len += check_datatype(str[i++ + 1], args);
 		}
 		else
-        {
+		{
 			write(1, &str[i], 1);
-		    str_len++;
-        }
+			str_len++;
+		}
 	}
 	return (str_len);
 }

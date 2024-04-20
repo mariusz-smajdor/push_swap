@@ -1,21 +1,28 @@
-#include "../pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 22:50:06 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/20 19:36:48 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_lstadd_back(t_list **stack, t_list *new)
+#include "../push_swap.h"
+
+void	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
-	t_list	*last;
+	t_stack	*last;
 
 	if (!*stack)
-	{
 		*stack = new;
-		return ;
-	}
-	last = *stack;
-	last->prev = new->number;
-	while (last->next)
+	else
 	{
-		last->next->prev = last->number;
-		last = last->next;
+		last = *stack;
+		while (last->next)
+			last = last->next;
+		last->next = new;
 	}
-	new->prev = last->number;
-	last->next = new;
 }

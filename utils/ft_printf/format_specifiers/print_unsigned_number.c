@@ -1,4 +1,16 @@
-#include "../ftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_unsigned_number.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 22:14:59 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/18 22:20:39 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../ft_printf.h"
 
 static int	put_number(unsigned int *p_n, char *numbers)
 {

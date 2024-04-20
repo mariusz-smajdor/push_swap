@@ -1,4 +1,16 @@
-#include "../pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 22:06:47 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/20 19:39:27 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 static int	safe_malloc(char **token_v, int position, size_t buffer)
 {
@@ -16,7 +28,7 @@ static int	safe_malloc(char **token_v, int position, size_t buffer)
 	return (0);
 }
 
-static int	fill(char **token_v, char const *s, char delimeter)
+static int	fill(char **token_v, const char *s, char delimeter)
 {
 	size_t	len;
 	int		i;
@@ -34,16 +46,16 @@ static int	fill(char **token_v, char const *s, char delimeter)
 		}
 		if (len)
 		{
-			 if (safe_malloc(token_v, i, len + 1))
-				   return (1);
-		  ft_strlcpy(token_v[i], s - len, len + 1);
+			if (safe_malloc(token_v, i, len + 1))
+				return (1);
+			ft_strlcpy(token_v[i], s - len, len + 1);
 		}
 		++i;
 	}
 	return (0);
 }
 
-static size_t	count_tokens(char const *s, char delimeter)
+static size_t	count_tokens(const char *s, char delimeter)
 {
 	size_t	tokens;
 	int		inside_token;
@@ -67,7 +79,7 @@ static size_t	count_tokens(char const *s, char delimeter)
 	return (tokens);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	tokens;
 	char	**token_v;

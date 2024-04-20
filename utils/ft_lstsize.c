@@ -1,14 +1,28 @@
-#include "../pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 23:15:00 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/20 19:36:48 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	ft_lstsize(t_list *stack)
+#include "../push_swap.h"
+
+size_t	ft_lstsize(t_stack *lst)
 {
-	size_t size;
+	size_t	i;
+	t_stack	*tmp;
 
-	size = 0;
-	while (stack)
+	i = 0;
+	tmp = lst;
+	while (tmp)
 	{
-		size++;
-		stack = stack->next;
+		tmp = tmp->next;
+		i++;
 	}
-	return (size);
+	return (i);
 }

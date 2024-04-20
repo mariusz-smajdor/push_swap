@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_lstmin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 22:13:10 by msmajdor          #+#    #+#             */
+/*   Created: 2024/04/18 23:30:07 by msmajdor          #+#    #+#             */
 /*   Updated: 2024/04/20 19:36:48 by msmajdor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_error(void)
+int	ft_lstmin(t_stack *lst)
 {
-	ft_printf("Error\n");
-	exit(1);
+	int	min;
+
+	min = lst->number;
+	while (lst)
+	{
+		if (lst->number < min)
+			min = lst->number;
+		lst = lst->next;
+	}
+	return (min);
 }
