@@ -12,8 +12,6 @@
 
 #include "../push_swap.h"
 
-// This function rotates both stack_a and stack_b
-// in the same direction as required amount.
 int	use_rarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -39,8 +37,6 @@ int	use_rarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_b in reverse direction,
-// the stack_a in oppsite direction of stack_a as required amount.
 int	use_rarrb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -62,8 +58,6 @@ int	use_rarrb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_a in reverse direction,
-// the stack_b in oppsite direction of stack_a as required amount.
 int	use_rrarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -84,9 +78,6 @@ int	use_rrarb(t_stack **a, t_stack **b, int c, char s)
 	}
 	return (-1);
 }
-
-// This function rotate both stack_a and stack_b in the
-// reverse direction as required amount.
 
 int	use_rrarrb(t_stack **a, t_stack **b, int c, char s)
 {
