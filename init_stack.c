@@ -1,20 +1,34 @@
-#include "pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 22:37:15 by msmajdor          #+#    #+#             */
+/*   Updated: 2024/04/20 21:50:32 by msmajdor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_list	*init_stack(char **av, bool is_split)
+#include "push_swap.h"
+
+t_stack	*init_stack(int ac, char **av)
 {
-	t_list	*stack;
-	t_list	*new;
-	int		i;
+	t_stack	*stack;
+	t_stack	*new;
+	size_t	i;
 
 	stack = NULL;
-	i = !is_split;
+	i = 0;
 	while (av[i])
 	{
 		new = ft_lstnew(ft_atoi(av[i]));
 		if (!new)
-			ft_error();
+			ft_lstfree(&stack, true);
 		ft_lstadd_back(&stack, new);
 		i++;
 	}
+	if (ac == 2)
+		ft_arrfree(av);
 	return (stack);
 }
