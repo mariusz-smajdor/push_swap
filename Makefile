@@ -1,7 +1,8 @@
-NAME =		push_swap
-CC =		cc
-FLAGS =		-Wall -Wextra -Werror
-RM =		rm -f
+NAME =			push_swap
+CC =			cc
+FLAGS =			-Wall -Wextra -Werror
+RM =			rm -f
+MAKEFLAGS +=	-s
 
 SRCS =		$(wildcard *.c) \
 			$(wildcard */*.c) \
