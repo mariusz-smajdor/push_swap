@@ -51,7 +51,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-void	ft_arrfree(char **arr);
+void	ft_arrfree(char **arr, bool error);
 size_t	ft_lstsize(t_stack *lst);
 t_stack	*ft_lstnew(int n);
 t_stack	*ft_lstlast(t_stack *lst);

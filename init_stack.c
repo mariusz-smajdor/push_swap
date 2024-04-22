@@ -29,6 +29,6 @@ t_stack	*init_stack(int ac, char **av)
 		i++;
 	}
 	if (ac == 2)
-		ft_arrfree(av);
+		ft_arrfree(av, false);
 	return (stack);
 }

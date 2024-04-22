@@ -12,18 +12,16 @@
 
 #include "../push_swap.h"
 
-void	ft_arrfree(char **arr)
+void	ft_arrfree(char **arr, bool error)
 {
 	size_t	i;
 
 	i = 0;
-	if (arr)
-	{
-		while (arr[i])
-		{
-			free(arr[i]);
-			i++;
-		}
-		free(arr);
-	}
+	while (arr[i])
+		i++;
+	while (i--)
+		free(arr[i]);
+	free(arr);
+	if (error)
+		ft_error();
 }
