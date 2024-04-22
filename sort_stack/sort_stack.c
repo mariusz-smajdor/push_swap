@@ -107,7 +107,7 @@ void	sort_stack(t_stack **stack_a)
 	int		i;
 
 	stack_b = NULL;
-	if (ft_lstsize(*stack_a) == 2)
+	if (ft_lstsize(*stack_a) == 2 && !is_sorted(*stack_a))
 		sa(stack_a);
 	else
 	{
