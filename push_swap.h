@@ -27,7 +27,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-
 char	**process_input(int ac, char **av);
 t_stack	*init_stack(int ac, char **av);
 void	sort_stack(t_stack **stack_a);
@@ -44,29 +43,29 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_error(void);
 int		ft_printf(const char *str, ...);
+void	ft_arrfree(char **arr, bool error);
+int		ft_atoi(const char *str);
+void	ft_error(void);
+char	*ft_get_next_line(int fd);
 int		ft_isdigit(int c);
 int		ft_issign(int c);
-char	**ft_split(const char *s, char c);
-char	*ft_get_next_line(int fd);
+void	ft_lstadd_back(t_stack **stack, t_stack *new);
+void	ft_lstfree(t_stack **lst, bool error);
+t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstmax(t_stack *lst);
+int		ft_lstmin(t_stack *lst);
+t_stack	*ft_lstnew(int n);
+size_t	ft_lstsize(t_stack *lst);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_atoi(const char *str);
-size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-void	ft_arrfree(char **arr, bool error);
-size_t	ft_lstsize(t_stack *lst);
-t_stack	*ft_lstnew(int n);
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_lstadd_back(t_stack **stack, t_stack *new);
-void	ft_lstfree(t_stack **lst, bool error);
-int		ft_lstmax(t_stack *lst);
-int		ft_lstmin(t_stack *lst);
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 int		calculate_rotation_ba(t_stack *a, t_stack *b);
 int		calculate_rotation_ab(t_stack *a, t_stack *b);
