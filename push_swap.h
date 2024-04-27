@@ -12,16 +12,19 @@
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 # include <stdlib.h>
 # include <stdbool.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
 	int				number;
 	size_t			index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 char	*get_next_line(int fd);
