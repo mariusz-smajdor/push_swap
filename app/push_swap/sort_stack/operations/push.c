@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msmajdor <msmajdor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 23:23:27 by msmajdor          #+#    #+#             */
+/*   Created: 2024/04/18 23:17:09 by msmajdor          #+#    #+#             */
 /*   Updated: 2024/04/20 19:36:48 by msmajdor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../../../push_swap.h"
 
-static void	rotate(t_stack **stack)
+static void	push(t_stack **src, t_stack **dst)
 {
-	t_stack	*last;
-	t_stack	*first;
+	t_stack	*tmp;
 
-	if (!*stack || !(*stack)->next)
+	if (!*src)
 		return ;
-	last = *stack;
-	first = *stack;
-	while (last->next)
-		last = last->next;
-	*stack = first->next;
-	first->next = NULL;
-	last->next = first;
+	tmp = *src;
+	*src = (*src)->next;
+	tmp->next = *dst;
+	*dst = tmp;
 }
 
-void	ra(t_stack **stack_a)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(stack_a);
-	ft_printf("ra\n");
+	push(stack_b, stack_a);
+	ft_printf("pa\n");
 }
 
-void	rb(t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(stack_b);
-	ft_printf("rb\n");
-}
-
-void	rr(t_stack **stack_a, t_stack **stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_printf("rr\n");
+	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }

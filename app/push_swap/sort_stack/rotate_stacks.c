@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../../push_swap.h"
 
 int	use_rarb(t_stack **a, t_stack **b, int c, char s)
 {
