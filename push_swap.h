@@ -27,7 +27,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-char	*get_next_line(int fd);
 
 char	**process_input(int ac, char **av);
 t_stack	*init_stack(int ac, char **av);
@@ -50,6 +49,8 @@ int		ft_printf(const char *str, ...);
 int		ft_isdigit(int c);
 int		ft_issign(int c);
 char	**ft_split(const char *s, char c);
+char	*ft_get_next_line(int fd);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *s);
