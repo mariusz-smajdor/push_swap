@@ -49,9 +49,13 @@ static void	validate_limits(char **av, char *v, bool splitted)
 		limit = "2147483647";
 	}
 	len = ft_strlen(v);
-	if ((len > max_len || (len == max_len
-				&& ft_strncmp(v, limit, max_len) > 0)) && splitted)
-		ft_arrfree(av, true);
+	if ((len > max_len || (len == max_len && ft_strncmp(v, limit, max_len) > 0)))
+	{
+		if (splitted)
+			ft_arrfree(av, true);
+		else
+			ft_error();
+	}
 }
 
 static void	validate_repetition(char **av, bool splitted)
